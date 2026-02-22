@@ -9,7 +9,8 @@ import sqlite3, json
 from datetime import datetime, timezone, timedelta
 
 # ───────── CONFIG ─────────
-BOT_TOKEN = "8017631162:AAHTSjy1aFGyW_sqY4D-aXyJ7r-_NuHX7QM"
+import os
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 IST = timezone(timedelta(hours=5, minutes=30))
 
 # ───────── DB ─────────
@@ -407,4 +408,5 @@ def main():
     app.run_polling()
 
 if __name__ == "__main__":
+
     main()
